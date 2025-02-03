@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello, World!</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pi Coin Value Calculator</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin: 50px; }
+        input { padding: 10px; width: 200px; margin-top: 20px; }
+        button { padding: 10px 20px; margin-top: 10px; cursor: pointer; }
+        #result { font-size: 20px; margin-top: 20px; font-weight: bold; }
+        .conversion-container { margin-top: 40px; }
+    </style>
+</head>
+<body>
+    <h2>Pi Coin Value Calculator</h2>
+    
+    <!-- Pi to Dollar Converter -->
+    <div>
+        <h3>Pi to Dollar</h3>
+        <p>Enter the number of Pi coins you own:</p>
+        <input type="number" id="piAmount" placeholder="Enter Pi amount">
+        <br>
+        <button onclick="calculatePiToDollar()">Calculate Value in USD</button>
+        <p id="resultPiToDollar"></p>
+    </div>
+
+    <hr>
+
+    <!-- Dollar to Pi Converter -->
+    <div class="conversion-container">
+        <h3>Dollar to Pi</h3>
+        <p>Enter the amount in USD:</p>
+        <input type="number" id="dollarAmount" placeholder="Enter amount in USD">
+        <br>
+        <button onclick="calculateDollarToPi()">Calculate Pi Coins</button>
+        <p id="resultDollarToPi"></p>
+    </div>
+
+    <script>
+        var gcv = 314159;  // GCV in USD
+
+        function calculatePiToDollar() {
+            var piCoins = document.getElementById("piAmount").value;
+            var totalValue = piCoins * gcv;
+            document.getElementById("resultPiToDollar").innerHTML = "Estimated Value: $" + totalValue.toLocaleString();
+        }
+
+        function calculateDollarToPi() {
+            var dollarAmount = document.getElementById("dollarAmount").value;
+            var piCoins = dollarAmount / gcv;
+            document.getElementById("resultDollarToPi").innerHTML = "You will receive " + piCoins.toFixed(6) + " Pi coins.";
+        }
+    </script>
+</body>
+</html>
+
+      
+ 
+  </body>
+</html>
